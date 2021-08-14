@@ -1,0 +1,64 @@
+#secao-editar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 82vh;
+    color: white;
+    background-image: url("../../../../image/cozinha.jpg");
+    background-size: cover;
+    
+}
+
+#ed-div-editar {
+    padding: 1rem 3rem;
+    background-color: #212529;
+    border-radius: 15px;
+    box-shadow: 0 5px 8px #000;
+
+}
+
+
+#ed-selecionarProduto {
+    margin-bottom: 60px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.ed-rotulo-campo{
+    display: flex;
+    margin-bottom: 16px;
+}
+
+
+.ed-label {
+    width: 10em;
+}
+
+.fa-edit {
+    margin-left: 1rem;
+    height: auto;
+}
+
+.ed-input {
+    width: 11rem;
+    height: 30px;
+}
+
+.ed-div-botao{
+    display: flex;
+    justify-content: flex-end;
+    margin: 3rem 0 1rem 0;
+}
+
+.botao-editar {
+    color: white;
+    background-color: #495057;
+    width: 5rem;
+}
+
+.botao-editar:hover {
+    background-color: #adb5bd;
+    color: black;
+    
+}

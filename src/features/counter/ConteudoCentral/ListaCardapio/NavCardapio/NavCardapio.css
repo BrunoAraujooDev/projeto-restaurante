@@ -1,0 +1,15 @@
+#navBar-principal{
+    align-self: center;
+    border-radius: 5px;
+    width: 80vw;
+    margin: 12rem 8rem 6rem 12rem;
+}
+
+.lc-nav-botao{
+    background-color: #0d1217;
+}
+
+.lc-nav-botao:hover {
+    background-color: #1c2631;
+    border-color: #141c24;
+}

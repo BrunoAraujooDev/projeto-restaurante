@@ -1,0 +1,32 @@
+#lm-principal{
+    background-color: #06080a;
+    height: 700px;
+    max-width: 100%;
+    
+}
+
+
+.lm-texto-principal {
+    color: #fff;
+    padding-left: 3rem;
+}
+
+.lm-div-mapa{
+    height: auto;
+    width: 100%;
+    
+}
+
+.lm-div-img{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    
+}
+
+
+#lm-mapa{
+    height: 500px;
+    width: 80%;
+}

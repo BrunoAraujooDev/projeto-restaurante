@@ -1,0 +1,44 @@
+#li-principal{
+    height: 700px;
+    max-width: 90%;
+    background-color: #0b090a;
+    margin: 3rem 0 3rem 3rem;
+    font-size: 2rem;
+    border: 10px solid #bf9819;
+}
+
+#li-carrosel{
+    height: 100%;
+    width: 500px; 
+    
+}
+
+.li-div{
+    max-width: 100%;
+}
+
+.li-imagem-carrosel{
+    height: 650px;
+    padding: 2rem 3rem 0px 3rem;
+    max-width: 100%;
+    
+}
+
+.li-texto-principal{
+   background-color: rgba(0, 0, 0, 0.384);
+   width: 94.5%;
+   left: 2.8%;
+
+}
+
+.li-texto-principal > h2 {
+    font-family: 'Dancing Script', cursive;
+}
+
+.li-paragrafo{
+    margin-top: 32px;
+    font-size: 2rem;
+    line-height: 1.32;
+    font-weight: bold;
+    font-family: 'Dancing Script', cursive;
+}

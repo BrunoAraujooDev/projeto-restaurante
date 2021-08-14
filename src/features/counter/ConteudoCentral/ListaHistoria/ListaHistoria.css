@@ -1,0 +1,29 @@
+.lh-principal{
+    display: flex;
+    height: auto;
+    width: fit-content;
+}
+
+#lh-conteudo-historia{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0;
+    padding: 1.4rem 3rem;
+    border: 10px solid #bf9819;
+    color: #ffb703;
+}
+
+#lh-titulo{
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    font-family: 'MonteCarlo', cursive;
+}
+
+.lh-p-texto{
+    height: auto;
+    width: 30vw;
+    margin-bottom: 0px;
+    font-size: 1.2rem;
+    font-family: 'Dancing Script', cursive;
+}

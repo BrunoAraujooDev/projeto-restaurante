@@ -1,0 +1,31 @@
+#secao-cardapio{
+    background-color: #0b090a;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.lc-principal{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: auto;
+}
+
+.lc-div-imagem {
+    height: 12.5rem;
+}
+
+.card-img {
+    object-fit: cover;
+    height: 100%;
+}
+
+.card {
+    min-height: 12.5rem;
+    margin-left: 1rem;
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 30rem;
+}

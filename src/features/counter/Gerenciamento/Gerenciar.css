@@ -1,0 +1,75 @@
+.gerenciar-secao{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 82vh;
+}
+
+.gerenciar-imagem{
+    height: 8rem;
+    width: 6rem;
+}
+
+#gerenciar-div-criar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem 2rem;
+    height: 20rem;
+    width: 15rem;
+    background-color: #219ebc;
+    border-radius: 10px;
+    margin-left: 3rem;
+    color: #0d1f24;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 5px 8px #000;
+}
+
+
+
+
+#gerenciar-div-deletar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem 2rem;
+    height: 20rem;
+    width: 15rem;
+    background-color: #a4133c; 
+    border-radius: 10px;
+    margin-left: 3rem;
+    color: #2b020d;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 5px 8px #000;
+}
+
+#gerenciar-div-modificar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem 2rem;
+    height: 20rem;
+    width: 15rem;
+    background-color: #036666;
+    border-radius: 10px;
+    margin-left: 3rem;
+    color: #132a13;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 5px 8px #000;
+    transition: 200ms transform ease-in-out;
+}
+
+
+.card-gerenciar:hover{
+    box-shadow: 2px 2px 0px #000;
+    transform: scale(1.1);
+    transition: 300ms transform cubic-bezier(0.42, 0, 0.65, 1.7);
+}
+
+.gerenciar-texto{
+    margin-top: 4rem;
+}
