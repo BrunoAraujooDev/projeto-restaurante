@@ -1,11 +1,11 @@
 import {  createSlice } from '@reduxjs/toolkit';
-import usuario from '../../Utilitarios/localStorageHelper';
+import { getUsuario } from '../../Utilitarios/localStorageHelper';
 
 
 
 const initialState = {
-  usuarioLogado: usuario.token ? true : false,
-  usuarioOnline: usuario.usuario ? usuario.usuario : null,
+  usuarioLogado: getUsuario().token ? true : false,
+  usuarioOnline: getUsuario().usuario ? getUsuario().usuario : null,
 };
 
 

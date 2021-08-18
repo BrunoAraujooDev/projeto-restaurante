@@ -10,7 +10,7 @@
     
 }
 
-#ed-div-editar {
+.gerenciar-div-interior {
     padding: 1rem 3rem;
     background-color: #212529;
     border-radius: 15px;
@@ -21,7 +21,6 @@
 
 #ed-selecionarProduto {
     margin-bottom: 60px;
-    margin-top: 20px;
     width: 100%;
 }
 

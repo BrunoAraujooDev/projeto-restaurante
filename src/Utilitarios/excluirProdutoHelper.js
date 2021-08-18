@@ -1,21 +1,27 @@
-import axios from "../app/axios/axios";
+import getAxios from "../app/axios/axios";
 
 
-const excluirProdutoHelper = async (id) => {
-    
+
+
+const excluirProdutoHelper = async id => {
+
 
     try {
 
+        const resposta = await getAxios().delete(`cardapio/${id}`);
 
-        const resposta = await axios.put(`cardapio/${id}`);
-
-        return true;
+        return {
+            resultado: true,
+            mensagem: resposta.data
+        };
 
     } catch (e) {
 
-        return false;
-
-}
+        return {
+            sucesso: false,
+            mensagem: null
+        }
+    }
 }
 
 export default excluirProdutoHelper;

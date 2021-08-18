@@ -9,7 +9,7 @@ const ListaHistoria = () => {
 
 
     return (
-        <section className="container lh-principal">
+        <section className="container lh-principal" id="lh-historia">
                 <article id="lh-conteudo-historia" className="col align-self-center col-lg-12 col-xxl-12">
                     <h3 id="lh-titulo">Nossa História</h3>
 

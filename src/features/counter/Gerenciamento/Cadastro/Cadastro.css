@@ -5,4 +5,15 @@
     align-items: center;
     min-height: 82vh;
     color: white;
+    background-image: url("../../../../image/cozinha.jpg");
+    background-size: cover;
+}
+
+.gerenciar-div-interior > h2{
+    margin-bottom: 2em;
+}
+
+.ec-input {
+    width: 15rem;
+    height: 30px;
 }

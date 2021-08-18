@@ -1,13 +1,19 @@
 import axios from "axios";
-import usuario from "../../Utilitarios/localStorageHelper";
+import { getUsuario } from "../../Utilitarios/localStorageHelper";
 
 
+const getAxios = () => {
 
-export default axios.create({
+    const usuario = getUsuario();
+    
+     return axios.create({
     baseURL: "http://localhost:8000/v2/",
     headers: {
         token: usuario.token ? usuario.token : null
     }
 
-})
+})}
+
+
+export default getAxios;
 

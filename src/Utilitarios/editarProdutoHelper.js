@@ -1,4 +1,4 @@
-import axios from "../app/axios/axios";
+import getAxios from "../app/axios/axios";
 
 
 const editarProdutoHelper = async (id, produtoEditado) => {
@@ -8,7 +8,7 @@ const editarProdutoHelper = async (id, produtoEditado) => {
 
         delete produtoEditado.id
 
-        const resposta = await axios.put(`cardapio/${id}`, produtoEditado);
+        const resposta = await getAxios().put(`cardapio/${id}`, produtoEditado);
 
         return true;
 

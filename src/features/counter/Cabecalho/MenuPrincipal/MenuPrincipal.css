@@ -79,3 +79,7 @@
     display: flex;
     justify-content: center;
 }
+
+.toast-botao:nth-last-child(1) {
+    margin-left: 1rem;
+}

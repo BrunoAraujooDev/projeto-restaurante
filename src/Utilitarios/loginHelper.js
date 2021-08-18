@@ -1,4 +1,4 @@
-import axios from "../app/axios/axios";
+import getAxios from "../app/axios/axios";
 
 const loginHelper =  async (usuario, senha) => {
 
@@ -6,9 +6,8 @@ const loginHelper =  async (usuario, senha) => {
 
         const dados = { usuario: usuario, senha: senha };
 
-        const resultado = await axios.post("auth", dados);
+        const resultado = await getAxios().post("auth", dados);
 
-        const token = resultado.data.token
 
         localStorage.setItem("usuario", JSON.stringify( resultado.data ));
 

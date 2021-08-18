@@ -39,7 +39,7 @@ const MenuPrincipal = () => {
     return <>
         <nav id="mp-container-nav" className="navbar navbar-expand-lg  fixed-top navbar-dark bg-dark">
             <div className="container-fluid">
-                <Link to="/" className="navbar-brand"><img src={logo} alt="Logo do restaurante"/></Link>
+                <Link to="/" className="navbar-brand"><img src={logo} alt="Logo do restaurante" /></Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -49,10 +49,10 @@ const MenuPrincipal = () => {
                             <Link to="/tela-cardapio" className="nav-link">Cardápio</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link " href="#">Localização</a>
+                            <a className="nav-link " href="/#lm-principal">Localização</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link " href="#">Nossa História</a>
+                            <a className="nav-link " href="/#lh-historia">Nossa História</a>
                         </li>
 
                         {usuarioLogado && usuarioOnline.tipo === "1" ?
@@ -64,9 +64,6 @@ const MenuPrincipal = () => {
                         {usuarioLogado ?
 
                             <>
-                                <li className="nav-item mp-div-login">
-                                    <Link to="/tela-mesa" className="menu-restrito">Mesa</Link>
-                                </li>
                                 <li className="nav-item mp-div-login">
                                     Bem vindo,
                                     <span id="mp-nome-usuario"> {usuarioOnline.nome}</span>
@@ -95,8 +92,8 @@ const MenuPrincipal = () => {
             <div id="logout-toast">
                 <h5 id="logout-frase">Você tem certeza? </h5>
                 <div id="mp-logout-div-botao">
-                    <button className="btn toast-botao" onClick={() => logout()}>Sim</button>
-                    <button className="btn toast-botao" onClick={() => setSair(false)}>Não</button>
+                    <button className="btn btn-danger toast-botao" onClick={() => logout()}>Sim</button>
+                    <button className="btn btn-primary toast-botao" onClick={() => setSair(false)}>Não</button>
                 </div>
             </div>
             : null}

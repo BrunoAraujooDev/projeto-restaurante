@@ -1,4 +1,4 @@
-import axios from "../app/axios/axios";
+import getAxios from "../app/axios/axios";
 
 
 const salvarProdutoHelper = async (novoProduto) => {
@@ -7,7 +7,7 @@ const salvarProdutoHelper = async (novoProduto) => {
     try {
 
 
-        const resposta = await axios.post("cardapio", novoProduto);
+        const resposta = await getAxios().post("cardapio", novoProduto);
 
         return true;
 

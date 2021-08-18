@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { atualizarLista } from "../../../../Store/Slices/cardapioSlice";
-import editarProdutoHelper from "../../../../Utilitarios/editarProdutoHelper";
+import excluirProdutoHelper from "../../../../Utilitarios/excluirProdutoHelper";
 import "./Excluir.css";
 
 
@@ -13,23 +13,23 @@ const Excluir = () => {
 
     const usuarioLogado = useSelector(state => state.usuario.usuarioLogado);
     const usuarioOnline = useSelector(state => state.usuario.usuarioOnline);
-    const lista = useSelector(state => state.cardapio.lista);
+    const lista = useSelector(state => state.cardapio.listaCompleta);
 
-    const [produtoExclusao, setProdutoExclusao] = useState(null);
-
-
-
-    const excluir = () => {
+    const [produtoExclusao, setProdutoExclusao] = useState({});
 
 
-        // const resultado = editarProdutoHelper();
 
-        // if (resultado) {
-        //     dispatch(atualizarLista())
-        //     history.push("/tela-cardapio");
-        // } else {
-        //     alert("Ocorreu um erro! Tente novamente!");
-        // }
+
+    const excluir = async () => {
+
+        const resultado = await excluirProdutoHelper(produtoExclusao.id);
+
+        if (resultado) {
+            dispatch(atualizarLista())
+            history.push("/tela-cardapio");
+        } else {
+            alert("Ocorreu um erro! Tente novamente!");
+        }
 
     }
 
@@ -37,48 +37,50 @@ const Excluir = () => {
 
     return (
         <>
-            {usuarioLogado && usuarioOnline.tipo === "1" ?
-                <section id="secao-cadastro">
 
-                    <h5>Escolha o produto para excluir</h5>
+            <section id="secao-excluir">
+                {usuarioLogado && usuarioOnline.tipo === "1" ?
+                    <div id="excluir-div-interior">
 
+                        <h5>Escolha o produto para excluir</h5>
 
-                    <select id="categoria" name="categoria">
-                            <option selected disabled value="-1">Selecione</option>
-                            {lista.map(produto =>
-                                <option key={produto.id}>
-                                    {produto.produto}
-                                </option>)}
-                        </select>
-                    {/* <div className="row">
-                        <figure id="ex-carousel">
+                        <div className="row">
+
                             {lista.map((produto) =>
-                                <img src={produto.imagem} alt={produto.descricao} className="ex-imagem" />
+                                <div id="ex-carousel" className="col-md-3 col-lg-4 col-xxl-3" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                    onClick={() => setProdutoExclusao(produto)} key={produto.id}>
+                                    <h2 className="ex-h2">{produto.produto}</h2>
+                                    <div className="ex-fundo"></div>
+                                    <figure className=" ex-figurinhas">
+                                        <img src={produto.imagem} alt={produto.descricao} className="img-fluid ex-imagem" />
+                                    </figure>
+                                </div>
                             )}
-                        </figure>
-                    </div> */}
 
-
-
-                    <button className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={() => excluir()}>Excluir</button>
-
-                </section>
-                :
-                <p>Você precisa estar logado para acessar a página!</p>}
-
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Excluir produto</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
-                            Você tem certeza que deseja excluir esse produto?
+
+                    </div>
+
+                    :
+                    <div className="gerenciar-div-interior">
+                        <p>Você precisa estar logado para acessar a página!</p>
+                    </div>
+                }
+            </section>
+
+            <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal-dialog">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h5 className="modal-title" id="exampleModalLabel">Excluir produto</h5>
+                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Sim</button>
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+                        <div className="modal-body">
+                            Você tem certeza que deseja excluir <b>{produtoExclusao.produto}</b>?
+                        </div>
+                        <div className="modal-footer">
+                            <button type="button" className="btn btn-danger" data-bs-dismiss="modal" onClick={() => excluir()}>Sim</button>
+                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Não</button>
                         </div>
                     </div>
                 </div>

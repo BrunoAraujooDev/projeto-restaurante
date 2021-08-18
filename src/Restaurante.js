@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
@@ -19,22 +19,27 @@ import Excluir from "./features/counter/Gerenciamento/Excluir/Excluir";
 
 
 
-const Restaurante = ( ) => {
+const Restaurante = () => {
 
     const dispatch = useDispatch();
 
-    const atualizarListaCompleta = useSelector( state => state.cardapio.atualizarListaCompleta);
+    const atualizarListaCompleta = useSelector(state => state.cardapio.atualizarListaCompleta);
 
-    useEffect( async () => {
+    useEffect( () => {
 
-        try {
-            const resposta = await axios.get("cardapio");
-            dispatch( salvarCardapio(resposta.data) );
-            dispatch( salvarCategorias(resposta.data) );
+        const handleCardapio = async () => {
 
-        } catch (e) {
-            console.log(`Houve um erro na chamada Ajax: ${e}`);
+            try {
+                const resposta = await axios().get("cardapio");
+                dispatch(salvarCardapio(resposta.data));
+                dispatch(salvarCategorias(resposta.data));
+    
+            } catch (e) {
+                console.log(`Houve um erro na chamada Ajax: ${e}`);
+            }
         }
+
+        handleCardapio();
 
 
     }, [atualizarListaCompleta]);
@@ -43,10 +48,10 @@ const Restaurante = ( ) => {
 
         <BrowserRouter >
 
-            <Cabecalho /> 
+            <Cabecalho />
 
             <Switch>
-            
+
                 <Route exact path="/">
 
                     <div id="container">
@@ -56,7 +61,7 @@ const Restaurante = ( ) => {
                 </Route>
 
 
-                <Route path="/tela-login" > 
+                <Route path="/tela-login" >
 
                     <div id="div-login">
                         <Login />
@@ -65,11 +70,11 @@ const Restaurante = ( ) => {
                 </Route>
 
 
-                <Route path="/tela-cardapio" component={ ListaCardapio } />
-                <Route path="/tela-geranciar" component={ Gerenciar } />
-                <Route path="/tela-cadastro" component={ Cadastro } />
-                <Route path="/tela-editar/" component={ Editar } />
-                <Route path="/tela-excluir/" component={ Excluir } />
+                <Route path="/tela-cardapio" component={ListaCardapio} />
+                <Route path="/tela-geranciar" component={Gerenciar} />
+                <Route path="/tela-cadastro" component={Cadastro} />
+                <Route path="/tela-editar/" component={Editar} />
+                <Route path="/tela-excluir/" component={Excluir} />
 
             </Switch>
 
@@ -77,7 +82,7 @@ const Restaurante = ( ) => {
 
         </BrowserRouter>
     </>
-    
+
 };
 
 export default Restaurante;

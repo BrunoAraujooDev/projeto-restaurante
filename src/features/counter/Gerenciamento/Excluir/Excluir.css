@@ -1,15 +1,93 @@
-.ex-carousel{
+#secao-excluir {
     display: flex;
-    width: 80%;
-    height: 15rem;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    min-height: 82vh;
+    color: white;
+    background-image: url("../../../../image/cozinha.jpg");
+    background-size: cover;
+    padding: 2rem;
+}
+
+
+#excluir-div-interior{
+    padding: 1rem 3rem;
+    background-color: #212529;
+    border-radius: 15px;
+    box-shadow: 0 5px 8px #000;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 8rem 0 3rem 0;
+    align-items: center;
 
 }
 
-.ex-imagem{
-    object-fit: cover;
-    object-position: center;
+#excluir-div-interior > h5 {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+}
+
+
+ /* aqui começa o exemplo */
+
+ #ex-carousel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    border-radius: 10px;
+    position: relative;
+    height: 15rem;
+    width: 20rem;
+    margin-left: .5rem;
+    margin-top: 1rem;
+}
+
+
+ .ex-h2{
+     width: 100%;
+     height: 100%;
+     position: absolute;
+     display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    margin: 0px;
+    text-align: center;
+    z-index: 5;
+ }
+
+ .ex-figurinhas {
+     height: 100%;
+     width: 100%;
+ }
+
+ .ex-imagem{
     width: 100%;
     height: 100%;
-    margin-left: 5px;
+    border-radius: 8px;
+    margin: 0;
+    padding: 0;
+    
 }
+
+ .ex-fundo {
+    height: 100%;
+    width: 93%;
+    background-color: rgba(0, 0, 0, 0.63);
+    display: none;
+    position: absolute;
+    z-index: 1;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+ }
+
+ 
+ #ex-carousel:hover > .ex-h2,
+ #ex-carousel:hover > .ex-fundo {
+     display: flex;
+ }

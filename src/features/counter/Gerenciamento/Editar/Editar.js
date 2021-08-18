@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { atualizarLista } from "../../../../Store/Slices/cardapioSlice";
@@ -17,17 +17,9 @@ const Editar = () => {
     const usuarioLogado = useSelector(state => state.usuario.usuarioLogado);
     const usuarioOnline = useSelector(state => state.usuario.usuarioOnline);
     const categorias = useSelector(state => state.categorias.lista);
-    const produtos = useSelector(state => state.cardapio.lista);
+    const produtos = useSelector(state => state.cardapio.listaCompleta);
 
 
-    // const habili = {
-    //     produto: true,
-    //     categoria: true,
-    //     descricao: true,
-    //     preco: true,
-    //     imagem: true,
-    //     imagemDestaque: true
-    // }
 
     const [form, setForm] = useState({});
     const [habilitar, setHabilitar] = useState({});
@@ -86,7 +78,7 @@ const Editar = () => {
     return (
         <section id="secao-editar">
             {usuarioLogado && usuarioOnline.tipo === "1" ?
-                <div id="ed-div-editar">
+                <div className="gerenciar-div-interior">
                     <h2>Escolha o produto e edite</h2>
 
                     <select id="ed-selecionarProduto" name="categoria" onChange={e => colocarValor(e.target.value)}>
